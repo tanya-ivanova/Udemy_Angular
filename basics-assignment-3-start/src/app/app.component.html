@@ -1,0 +1,19 @@
+<button *ngIf="hideDetails; else noDetails" (click)="onBtnClick()">
+  Display Details
+</button>
+<ng-template #noDetails>
+  <button (click)="onBtnClick()">Hide Details</button>
+</ng-template>
+
+<p *ngIf="!hideDetails">Secret password: tuna</p>
+
+<ul>
+  <li *ngFor="let click of buttonClicks; let i = index">
+    <p
+      [ngStyle]="{ 'background-color': i >= 4 ? 'blue' : 'transperant' }"
+      [ngClass]="{ whiteColor: i >= 4 }"
+    >
+      {{ click }}
+    </p>
+  </li>
+</ul>
